@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Abel', sans-serif;
+}
+
+h1{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15rem;
+}
