@@ -8,30 +8,111 @@ body {
 
 
 html {
-  font-size: 10px;
-  font-family: 'Abel', sans-serif;
+  font-family: gill-sans-nova, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
 }
 
 h1{
   font-style: normal;
-  font-weight: 400;
-  font-size: 15rem;
+  font-size: 2rem;
 }
 
 .container {
   display: grid;
   grid-template-areas:
-    "header";
+    "header"
+    "title"
+    "storytitle"
+    "trailer"
+    "story"
+    "historytitle"
+    "history"
+    "history1"
+    "history2"
+    "history3";
 }
 
 .header {
   grid-area: header;
+  width: 100%;
 }
+
+.title, .storytitle, .historytitle, .trailer, .story, .history, .history1, .history2, .history3 {
+  width: 100%;
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.title {
+  grid-area: title;
+}
+.storytitle{
+  grid-area: storytitle;
+}
+.historytitle{
+  grid-area: historytitle;
+}
+.trailer{
+  grid-area: trailer;
+}
+.story {
+  grid-area: story;
+}
+.history{
+  grid-area: history;
+}
+.history1{
+  grid-area: history1;
+}
+.history2{
+  grid-area: history2;
+}
+.history3{
+  grid-area: history3;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.trailer:hover .overlay {
+  opacity: 1;
+}
+
 
 @media only screen and (min-width: 360px) {
 .container{
-  grid-template-columns: 1fr 1fr 8fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 2fr 2fr 2fr 1fr 1fr 1fr; 
   grid-template-areas:
-    ". header header header .";
+    ". . header header header header header . . "
+    ". . . title title title . . ."
+    " . . trailer trailer trailer trailer trailer . ."
+    ". . . storytitle storytitle storytitle . . ."
+    " . . story story story story story . ."
+    ". . . historytitle historytitle historytitle . . ."
+    " . . history history history history history . ."
+    " . . history1 history1 history1 history1 history1 . ."
+    " . history2 history2 history2 . . . . ."
+    " . . . . history3 history3 history3 history3 ."
+    ;
 }
 }
+
+@media only screen and (min-width: 760px) {
+h1{
+  font-style: normal;
+  font-size: 3rem;
+}
+}
+
