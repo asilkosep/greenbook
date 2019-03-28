@@ -25,13 +25,56 @@ h1{
     "header"
     "title"
     "storytitle"
-    "trailer"
+    "trailer-container"
     "story"
     "historytitle"
     "history"
     "history1"
     "history2"
     "history3";
+}
+
+.trailer-container {
+  display: grid;
+  height: 10rem;
+  padding-top: 5rem;
+  grid-template-areas:
+  "trailer-section";
+}
+
+.trailer-section {
+  background-image: url("./images/gb_car.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  grid-area: trailer-section;
+  width: 100%;
+}
+.trailer-section {
+  border-radius: 50%;
+}
+
+.trailer-overlay {
+  position: absolute 0 0 0 0 ;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #494B56;
+  border-radius: 50%;
+}
+
+.trailer-section:hover .trailer-overlay {
+  opacity: .9;
+}
+
+.overlaytext {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
 }
 
 .header {
@@ -54,9 +97,6 @@ h1{
 .historytitle{
   grid-area: historytitle;
 }
-.trailer{
-  grid-area: trailer;
-}
 .story {
   grid-area: story;
 }
@@ -72,23 +112,10 @@ h1{
 .history3{
   grid-area: history3;
 }
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
-
-.trailer:hover .overlay {
-  opacity: 1;
-}
+/* .trailer{
+  grid-area: trailer;
+  border-radius: 50%;
+} */
 
 
 @media only screen and (min-width: 360px) {
@@ -97,7 +124,7 @@ h1{
   grid-template-areas:
     ". . header header header header header . . "
     ". . . title title title . . ."
-    " . . trailer trailer trailer trailer trailer . ."
+    " . . trailer-container trailer-container trailer-container trailer-container trailer-container . ."
     ". . . storytitle storytitle storytitle . . ."
     " . . story story story story story . ."
     ". . . historytitle historytitle historytitle . . ."
@@ -107,6 +134,11 @@ h1{
     " . . . . history3 history3 history3 history3 ."
     ;
 }
+/* .trailer-section{
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "overlay";
+} */
 }
 
 @media only screen and (min-width: 760px) {
