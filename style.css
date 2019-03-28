@@ -47,7 +47,7 @@ h2{
   width: 100%;
 }
 
-.title, .storytitle, .historytitle, .trailer-container, .story, .history, .history1, .history2, .history3, .quotes, .quote2 {
+.title, .storytitle, .historytitle, .story, .history, .history1, .history2, .history3, .quotes, .quote2 {
   width: 100%;
   padding-top: 4rem;
   text-align: center;
@@ -64,6 +64,8 @@ h2{
 }
 .trailer-container {
   grid-area: trailer-container;
+  padding-top: 2rem;
+  width: 100%;
 }
 .story {
   grid-area: story;
